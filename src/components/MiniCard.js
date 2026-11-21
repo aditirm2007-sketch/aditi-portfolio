@@ -1,0 +1,29 @@
+"use client";
+
+import Image from "next/image";
+import { motion } from "framer-motion";
+
+export default function MiniCard({ name, tag, description, image }) {
+  return (
+    <motion.div
+      whileHover={{ y: -6 }}
+      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+      className="group overflow-hidden rounded-xl border border-rule bg-surface"
+    >
+      <div className="relative aspect-[4/3] overflow-hidden">
+        <Image
+          src={image}
+          alt={name}
+          fill
+          sizes="(min-width: 768px) 33vw, 100vw"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+      </div>
+      <div className="p-4">
+        {tag && <p className="text-[11px] uppercase tracking-wide text-muted">{tag}</p>}
+        <h4 className="mt-1 font-display text-lg font-bold">{name}</h4>
+        {description && <p className="mt-1 text-sm text-foreground/70">{description}</p>}
+      </div>
+    </motion.div>
+  );
+}
