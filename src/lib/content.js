@@ -133,6 +133,7 @@ export const explorations = [
 export const posterWork = [
   { slug: "car", name: "Timeless Elegance", image: "/images/posters/car.jpg" },
   { slug: "burnout", name: "Burnout Is Not Success", image: "/images/posters/burnout.jpg" },
+  { slug: "walkingdead", name: "The Era of the Walking Dead", image: "/images/posters/walkingdead.jpg" },
 ];
 
 export const skills = [

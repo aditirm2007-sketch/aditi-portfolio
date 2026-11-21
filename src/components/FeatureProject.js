@@ -31,7 +31,7 @@ export default function FeatureProject({ project, reverse = false }) {
                 className="object-cover"
               />
             </motion.div>
-            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/0 to-transparent opacity-80 transition-opacity group-hover:opacity-40" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent opacity-80 transition-opacity group-hover:opacity-40" />
             <motion.span
               variants={{ hover: { opacity: 1, y: 0 } }}
               initial={{ opacity: 0, y: 8 }}
@@ -44,7 +44,9 @@ export default function FeatureProject({ project, reverse = false }) {
         </motion.div>
 
         <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-brand">{project.tag}</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent2">
+            {project.tag}
+          </p>
           <h3 className="mt-3 font-display text-3xl font-bold md:text-4xl">{project.name}</h3>
           <p className="mt-1 text-sm text-muted">
             {project.role} · {project.period}
@@ -65,7 +67,7 @@ export default function FeatureProject({ project, reverse = false }) {
           <div className="mt-6 flex flex-wrap items-center gap-6">
             <Link
               href={`/work/${project.slug}`}
-              className="inline-flex items-center gap-2 text-sm font-semibold text-brand underline-offset-4 hover:underline"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-accent2 underline-offset-4 hover:underline"
             >
               Read full case study →
             </Link>

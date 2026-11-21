@@ -16,7 +16,7 @@ export default function ContactPage() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-16 md:py-32">
       <Reveal>
-        <p className="text-xs uppercase tracking-[0.25em] text-brand">Contact</p>
+        <p className="text-xs uppercase tracking-[0.25em] text-accent2">Contact</p>
         <h1 className="mt-3 max-w-2xl font-display text-4xl font-bold leading-tight md:text-6xl">
           Have a project in mind?
           <br /> Let&apos;s build it.
@@ -34,13 +34,13 @@ export default function ContactPage() {
               href={link.href}
               target={link.href.startsWith("http") ? "_blank" : undefined}
               rel="noreferrer"
-              className="group flex items-center justify-between rounded-xl border border-rule p-6 transition-colors hover:border-brand"
+              className="group flex items-center justify-between rounded-xl border border-rule p-6 transition-colors hover:border-accent2"
             >
               <div>
                 <p className="text-xs uppercase tracking-[0.2em] text-muted">{link.label}</p>
                 <p className="mt-1 font-display text-lg font-bold">{link.value}</p>
               </div>
-              <span className="text-xl text-brand opacity-0 transition-opacity group-hover:opacity-100">
+              <span className="text-xl text-accent2 opacity-0 transition-opacity group-hover:opacity-100">
                 ↗
               </span>
             </a>

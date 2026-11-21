@@ -10,7 +10,7 @@ export default function AboutPage() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
       <Reveal>
-        <p className="text-xs uppercase tracking-[0.25em] text-brand">About</p>
+        <p className="text-xs uppercase tracking-[0.25em] text-accent2">About</p>
         <h1 className="mt-3 max-w-3xl font-display text-4xl font-bold leading-tight md:text-6xl">
           UI/UX designer &amp; full-stack developer, based in {profile.location}.
         </h1>
@@ -48,22 +48,13 @@ export default function AboutPage() {
 
         <Reveal delay={0.1}>
           <NumberedHeading index="03" title="Skills" />
-          <div className="mt-6 flex flex-col gap-8">
+          <div className="mt-6 flex flex-col gap-4">
             {skills.map((group) => (
-              <div key={group.category}>
-                <h4 className="font-display text-sm font-bold uppercase tracking-wide text-brand">
+              <div key={group.category} className="rounded-xl bg-brand p-5 text-brand-ink">
+                <h4 className="font-display text-sm font-bold uppercase tracking-wide">
                   {group.category}
                 </h4>
-                <ul className="mt-3 flex flex-wrap gap-2">
-                  {group.items.map((item) => (
-                    <li
-                      key={item}
-                      className="rounded-full border border-rule px-3 py-1.5 text-sm text-foreground/80"
-                    >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                <p className="mt-2 text-sm leading-relaxed">{group.items.join(" / ")}</p>
               </div>
             ))}
           </div>

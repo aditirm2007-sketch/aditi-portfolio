@@ -23,10 +23,10 @@ export default async function CaseStudyPage({ params }) {
   return (
     <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
       <Reveal>
-        <Link href="/work" className="text-sm text-muted hover:text-brand">
+        <Link href="/work" className="text-sm text-muted hover:text-accent2">
           ← Back to work
         </Link>
-        <p className="mt-6 text-xs uppercase tracking-[0.25em] text-brand">{project.tag}</p>
+        <p className="mt-6 text-xs uppercase tracking-[0.25em] text-accent2">{project.tag}</p>
         <h1 className="mt-3 font-display text-4xl font-bold md:text-6xl">{project.name}</h1>
         <p className="mt-2 text-sm text-muted">
           {project.role} · {project.period}

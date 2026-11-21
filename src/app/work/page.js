@@ -1,3 +1,4 @@
+import Link from "next/link";
 import FeatureProject from "@/components/FeatureProject";
 import CardDeck from "@/components/CardDeck";
 import MiniCard from "@/components/MiniCard";
@@ -13,14 +14,32 @@ export default function WorkPage() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
       <Reveal>
-        <p className="text-xs uppercase tracking-[0.25em] text-brand">Work</p>
+        <p className="text-xs uppercase tracking-[0.25em] text-accent2">Work</p>
         <h1 className="mt-3 font-display text-4xl font-bold md:text-6xl">
           Case studies &amp; explorations.
         </h1>
         <p className="mt-5 max-w-xl text-foreground/70">
           Two full products I designed and built end-to-end, plus a handful of earlier
-          design explorations.
+          design explorations — all below, scroll on.
         </p>
+      </Reveal>
+
+      {/* AT-A-GLANCE OVERVIEW GRID */}
+      <Reveal delay={0.1} className="mt-10">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+          <Link href="/work/stansv">
+            <MiniCard name="STANSV" tag="Case Study" image={featuredWork[0].image} />
+          </Link>
+          <Link href="/work/alufab">
+            <MiniCard name="Alufab" tag="Case Study" image={featuredWork[1].image} />
+          </Link>
+          <a href="#lavato">
+            <MiniCard name="LAVATO" tag="Exploration" image={explorations[0].cards[0].src} />
+          </a>
+          <a href="#ocean-editorial">
+            <MiniCard name="Ocean Editorial" tag="Exploration" image={explorations[1].cards[0].src} />
+          </a>
+        </div>
       </Reveal>
 
       <div className="mt-20">
@@ -46,12 +65,14 @@ export default function WorkPage() {
 
         <div className="mt-10 flex flex-col gap-6">
           {explorations.map((item) => (
-            <CardDeck key={item.slug} {...item} />
+            <div key={item.slug} id={item.slug}>
+              <CardDeck {...item} />
+            </div>
           ))}
         </div>
 
         <Reveal delay={0.1} className="mt-6">
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className="grid gap-6 sm:grid-cols-3">
             {posterWork.map((item, i) => (
               <MiniCard
                 key={item.slug}
