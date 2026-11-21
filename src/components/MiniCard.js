@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-export default function MiniCard({ name, tag, description, image }) {
+export default function MiniCard({ name, tag, description, image, index }) {
   return (
     <motion.div
       whileHover={{ y: -6 }}
@@ -18,6 +18,11 @@ export default function MiniCard({ name, tag, description, image }) {
           sizes="(min-width: 768px) 33vw, 100vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
+        {index && (
+          <span className="absolute left-3 top-3 flex h-7 w-7 items-center justify-center rounded-full bg-brand font-display text-xs font-bold text-brand-ink">
+            {index}
+          </span>
+        )}
       </div>
       <div className="p-4">
         {tag && <p className="text-[11px] uppercase tracking-wide text-muted">{tag}</p>}

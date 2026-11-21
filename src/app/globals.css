@@ -7,8 +7,8 @@
   --foreground: #f3f3f0;
   --muted: #8c8c92;
   --rule: #26262a;
-  --brand: #c6ff3a;
-  --brand-ink: #0a0a0b;
+  --brand: #ff3b30;
+  --brand-ink: #ffffff;
 }
 
 @theme inline {

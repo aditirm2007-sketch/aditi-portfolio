@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import NumberedHeading from "@/components/NumberedHeading";
 import { skills, education, achievements, profile } from "@/lib/content";
 
 export const metadata = {
@@ -23,8 +24,8 @@ export default function AboutPage() {
       <div className="mt-20 grid gap-16 md:grid-cols-[1fr_1.3fr]">
         <Reveal>
           <div>
-            <p className="text-xs uppercase tracking-[0.25em] text-muted">Education</p>
-            <h3 className="mt-3 font-display text-xl font-bold">{education.school}</h3>
+            <NumberedHeading index="01" title="Education" />
+            <h3 className="mt-5 font-display text-xl font-bold">{education.school}</h3>
             <p className="mt-1 text-foreground/70">{education.degree}</p>
             <p className="mt-1 text-sm text-muted">
               {education.period} · {education.location}
@@ -33,8 +34,8 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-14">
-            <p className="text-xs uppercase tracking-[0.25em] text-muted">Achievements</p>
-            <ul className="mt-4 flex flex-col gap-3">
+            <NumberedHeading index="02" title="Achievements" />
+            <ul className="mt-5 flex flex-col gap-3">
               {achievements.map((item) => (
                 <li key={item} className="flex gap-3 text-sm leading-relaxed text-foreground/80">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
@@ -46,8 +47,8 @@ export default function AboutPage() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <p className="text-xs uppercase tracking-[0.25em] text-muted">Skills</p>
-          <div className="mt-4 flex flex-col gap-8">
+          <NumberedHeading index="03" title="Skills" />
+          <div className="mt-6 flex flex-col gap-8">
             {skills.map((group) => (
               <div key={group.category}>
                 <h4 className="font-display text-sm font-bold uppercase tracking-wide text-brand">

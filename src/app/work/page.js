@@ -1,6 +1,8 @@
 import FeatureProject from "@/components/FeatureProject";
+import CardDeck from "@/components/CardDeck";
 import MiniCard from "@/components/MiniCard";
 import Reveal from "@/components/Reveal";
+import NumberedHeading from "@/components/NumberedHeading";
 import { featuredWork, explorations, posterWork } from "@/lib/content";
 
 export const metadata = {
@@ -21,7 +23,13 @@ export default function WorkPage() {
         </p>
       </Reveal>
 
-      <div className="mt-20 flex flex-col gap-24">
+      <div className="mt-20">
+        <Reveal>
+          <NumberedHeading index="01" title="Featured Case Studies" />
+        </Reveal>
+      </div>
+
+      <div className="mt-12 flex flex-col gap-24">
         {featuredWork.map((project, i) => (
           <FeatureProject key={project.slug} project={project} reverse={i % 2 === 1} />
         ))}
@@ -29,24 +37,32 @@ export default function WorkPage() {
 
       <div className="mt-28 border-t border-rule pt-16">
         <Reveal>
-          <p className="text-xs uppercase tracking-[0.25em] text-muted">Explorations</p>
-          <h2 className="mt-3 font-display text-2xl font-bold md:text-3xl">
-            Earlier design work &amp; visual experiments.
-          </h2>
+          <NumberedHeading index="02" title="Explorations" />
+          <p className="mt-4 max-w-xl text-foreground/70">
+            Earlier design work &amp; visual experiments — presented as their source decks,
+            not single flattened screenshots.
+          </p>
         </Reveal>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {explorations.map((item, i) => (
-            <Reveal key={item.slug} delay={i * 0.05}>
-              <MiniCard {...item} />
-            </Reveal>
-          ))}
-          {posterWork.map((item, i) => (
-            <Reveal key={item.slug} delay={(explorations.length + i) * 0.05}>
-              <MiniCard name={item.name} tag="Poster Design" image={item.image} />
-            </Reveal>
+        <div className="mt-10 flex flex-col gap-6">
+          {explorations.map((item) => (
+            <CardDeck key={item.slug} {...item} />
           ))}
         </div>
+
+        <Reveal delay={0.1} className="mt-6">
+          <div className="grid gap-6 sm:grid-cols-2">
+            {posterWork.map((item, i) => (
+              <MiniCard
+                key={item.slug}
+                name={item.name}
+                tag="Poster Design"
+                image={item.image}
+                index={String(i + 1).padStart(2, "0")}
+              />
+            ))}
+          </div>
+        </Reveal>
       </div>
     </div>
   );
