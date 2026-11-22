@@ -1,7 +1,7 @@
 import FeatureProject from "@/components/FeatureProject";
 import FloatingCard from "@/components/FloatingCard";
-import SlideFan from "@/components/SlideFan";
-import PosterFan from "@/components/PosterFan";
+import CardCarousel from "@/components/CardCarousel";
+import PosterCarousel from "@/components/PosterCarousel";
 import Reveal from "@/components/Reveal";
 import NumberedHeading from "@/components/NumberedHeading";
 import { featuredWork, explorations, posterWork } from "@/lib/content";
@@ -78,7 +78,7 @@ export default function WorkPage() {
         <div className="mt-10 flex flex-col gap-20">
           {explorations.map((item) => (
             <div key={item.slug} id={item.slug}>
-              <SlideFan {...item} />
+              <CardCarousel {...item} />
             </div>
           ))}
         </div>
@@ -87,7 +87,7 @@ export default function WorkPage() {
           <p className="mb-6 text-center text-xs uppercase tracking-wide text-muted">
             Poster Design
           </p>
-          <PosterFan items={posterWork} />
+          <PosterCarousel items={posterWork} />
         </Reveal>
       </div>
     </div>

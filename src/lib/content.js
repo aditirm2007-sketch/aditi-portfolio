@@ -111,10 +111,15 @@ export const explorations = [
       "An early mobile app concept for an on-demand laundry service — research, user flows, wireframes through to hi-fi screens.",
     cards: [
       { src: "/images/laundry/cards/01-cover.jpg", label: "Cover" },
+      { src: "/images/laundry/cards/06-problem.jpg", label: "Problem statement" },
+      { src: "/images/laundry/cards/07-empathy.jpg", label: "Empathy map" },
+      { src: "/images/laundry/cards/05-persona.jpg", label: "User persona" },
       { src: "/images/laundry/cards/02-app.jpg", label: "Native app" },
+      { src: "/images/laundry/cards/08-userflow.jpg", label: "User flow" },
+      { src: "/images/laundry/cards/09-sitemap.jpg", label: "Site map" },
+      { src: "/images/laundry/cards/10-midfi.jpg", label: "Wireframes" },
       { src: "/images/laundry/cards/03-design.jpg", label: "Design system" },
       { src: "/images/laundry/cards/04-hifi.jpg", label: "Hi-fi screens" },
-      { src: "/images/laundry/cards/05-persona.jpg", label: "User persona" },
     ],
   },
   {
@@ -125,7 +130,9 @@ export const explorations = [
       "A high-fidelity ocean-conservation editorial exploring typography, grid systems, and visual hierarchy.",
     cards: [
       { src: "/images/ocean/cards/01-cover.jpg", label: "Cover" },
-      { src: "/images/ocean/cards/02-options.jpg", label: "Content slide" },
+      { src: "/images/ocean/cards/02-options.jpg", label: "Content slide — options" },
+      { src: "/images/ocean/cards/04-abcd.jpg", label: "Content slide — A/B/C/D" },
+      { src: "/images/ocean/cards/05-icons.jpg", label: "Content slide — icons" },
       { src: "/images/ocean/cards/03-colors.jpg", label: "Colour system" },
     ],
   },
@@ -133,12 +140,12 @@ export const explorations = [
 
 export const posterWork = [
   { slug: "apocalypse", name: "Apocolyps", image: "/images/posters/apocalypse.jpg" },
-  { slug: "rockthevibe", name: "Rock the Vibe", image: "/images/posters/rockthevibe.jpg" },
   { slug: "car", name: "Timeless Elegance", image: "/images/posters/car.jpg" },
   { slug: "walkingdead", name: "The Era of the Walking Dead", image: "/images/posters/walkingdead.jpg" },
-  { slug: "walkingdead2", name: "The Era of the Walking Dead (II)", image: "/images/posters/walkingdead2.jpg" },
-  { slug: "burnout", name: "Burnout Is Not Success", image: "/images/posters/burnout.jpg" },
   { slug: "dahmer1", name: "Jeffrey Dahmer I", image: "/images/posters/dahmer1.jpg" },
+  { slug: "burnout", name: "Burnout Is Not Success", image: "/images/posters/burnout.jpg" },
+  { slug: "rockthevibe", name: "Rock the Vibe", image: "/images/posters/rockthevibe.jpg" },
+  { slug: "walkingdead2", name: "The Era of the Walking Dead (II)", image: "/images/posters/walkingdead2.jpg" },
   { slug: "dahmer2", name: "Jeffrey Dahmer II", image: "/images/posters/dahmer2.jpg" },
 ];
 
