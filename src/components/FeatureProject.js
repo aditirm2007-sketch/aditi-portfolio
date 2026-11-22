@@ -36,7 +36,7 @@ export default function FeatureProject({ project, reverse = false }) {
               variants={{ hover: { opacity: 1, y: 0 } }}
               initial={{ opacity: 0, y: 8 }}
               transition={{ duration: 0.3 }}
-              className="absolute bottom-4 right-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-black"
+              className="absolute bottom-4 right-4 inline-flex items-center gap-2 rounded-full bg-brand px-4 py-2 text-sm font-semibold text-brand-ink"
             >
               View case study ↗
             </motion.span>

@@ -5,77 +5,75 @@ import { profile } from "@/lib/content";
 
 export default function Home() {
   return (
-    <section className="px-6 pb-20 pt-10 md:pt-14">
-      <div className="mx-auto max-w-6xl">
-        <Reveal>
-          <div className="flex items-start justify-between border-b border-rule pb-6 text-[11px] uppercase tracking-[0.2em] text-muted">
-            <span className="max-w-[12rem] leading-relaxed">
-              UI/UX Design &amp;
-              <br />
-              Full-Stack Development
-            </span>
-            <span>Portfolio 2026</span>
-          </div>
-        </Reveal>
+    <>
+      <section className="relative overflow-hidden bg-[#f3f1ea] px-6 pb-20 pt-16 text-[#17161a] md:pt-24">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-40 -top-48 h-[36rem] w-[36rem] rounded-full border border-black/10"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-16 top-6 h-80 w-80 rounded-full border border-black/10"
+        />
 
-        <div className="mt-10 grid items-center gap-10 md:grid-cols-[1.3fr_1fr]">
-          <div>
-            <Reveal delay={0.05}>
-              <h1 className="font-display text-[2.8rem] font-bold leading-[0.95] tracking-tight sm:text-[4.2rem] md:text-[4.6rem] lg:text-[5.2rem]">
-                ADITI RM
-              </h1>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <p className="mt-5 text-sm uppercase tracking-[0.2em] text-muted">
-                {profile.role}
-              </p>
-            </Reveal>
-            <Reveal delay={0.15}>
-              <div className="mt-5 max-w-md border-l-2 border-foreground pl-4">
-                <p className="text-base leading-relaxed text-foreground/80">
-                  {profile.tagline}
+        <div className="relative mx-auto max-w-6xl">
+          <div className="grid items-center gap-10 md:grid-cols-[1.25fr_1fr]">
+            <div>
+              <Reveal>
+                <p className="text-xs uppercase tracking-[0.3em] text-black/60">
+                  {profile.role}
                 </p>
-              </div>
-            </Reveal>
-            <Reveal delay={0.2}>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <Link
-                  href="/work"
-                  className="rounded-full bg-brand px-6 py-3 text-sm font-semibold text-brand-ink transition-transform hover:scale-105"
-                >
-                  View Work
-                </Link>
-                <Link
-                  href="/contact"
-                  className="rounded-full border border-rule px-6 py-3 text-sm font-semibold transition-colors hover:border-foreground hover:text-foreground"
-                >
-                  Get in Touch
-                </Link>
-              </div>
-            </Reveal>
-          </div>
+              </Reveal>
+              <Reveal delay={0.05}>
+                <h1 className="mt-5 font-display text-[3.4rem] font-bold leading-[0.92] tracking-tight sm:text-[5.2rem] md:text-[6rem] lg:text-[6.8rem]">
+                  ADITI RM
+                </h1>
+              </Reveal>
+              <Reveal delay={0.15}>
+                <div className="mt-6 max-w-md border-l-2 border-[#17161a] pl-4">
+                  <p className="text-base leading-relaxed text-black/70">{profile.tagline}</p>
+                </div>
+              </Reveal>
+              <Reveal delay={0.2}>
+                <div className="mt-8 flex flex-wrap gap-4">
+                  <Link
+                    href="/work"
+                    className="rounded-full bg-[#17161a] px-6 py-3 text-sm font-semibold text-[#f3f1ea] transition-transform hover:scale-105"
+                  >
+                    View Work
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="rounded-full border border-black/20 px-6 py-3 text-sm font-semibold transition-colors hover:border-black hover:bg-black/5"
+                  >
+                    Get in Touch
+                  </Link>
+                </div>
+              </Reveal>
+            </div>
 
-          <Reveal delay={0.1} className="hidden md:block">
-            <div className="relative aspect-[4/5] w-full">
-              <div className="absolute right-0 top-6 h-[82%] w-[82%] rounded-full border border-rule bg-surface-2" />
-              <div className="absolute inset-0 flex items-end justify-center">
-                <div className="relative h-[96%] w-full">
-                  <Image
-                    src="/images/portrait/home.png"
-                    alt="Aditi RM"
-                    fill
-                    sizes="420px"
-                    className="object-contain object-bottom"
-                    priority
-                  />
+            <Reveal delay={0.1} className="hidden md:block">
+              <div className="relative aspect-[4/5] w-full">
+                <div className="absolute right-0 top-2 h-[88%] w-[88%] rounded-full bg-[#e3ddc9]" />
+                <div className="absolute inset-0 flex items-end justify-center">
+                  <div className="relative h-full w-full">
+                    <Image
+                      src="/images/portrait/home.png"
+                      alt="Aditi RM"
+                      fill
+                      sizes="460px"
+                      className="object-contain object-bottom"
+                      priority
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div className="mx-auto mt-24 max-w-6xl border-t border-rule pt-16">
+      <div className="mx-auto max-w-6xl border-t border-rule px-6 py-16">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.25em] text-muted">About</p>
           <h2 className="mt-3 max-w-2xl font-display text-2xl font-bold leading-snug md:text-4xl">
@@ -90,6 +88,6 @@ export default function Home() {
           </Link>
         </Reveal>
       </div>
-    </section>
+    </>
   );
 }
