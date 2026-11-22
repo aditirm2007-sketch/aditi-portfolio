@@ -131,9 +131,14 @@ export const explorations = [
 ];
 
 export const posterWork = [
+  { slug: "apocalypse", name: "Apocolyps", image: "/images/posters/apocalypse.jpg" },
+  { slug: "rockthevibe", name: "Rock the Vibe", image: "/images/posters/rockthevibe.jpg" },
   { slug: "car", name: "Timeless Elegance", image: "/images/posters/car.jpg" },
-  { slug: "burnout", name: "Burnout Is Not Success", image: "/images/posters/burnout.jpg" },
   { slug: "walkingdead", name: "The Era of the Walking Dead", image: "/images/posters/walkingdead.jpg" },
+  { slug: "walkingdead2", name: "The Era of the Walking Dead (II)", image: "/images/posters/walkingdead2.jpg" },
+  { slug: "burnout", name: "Burnout Is Not Success", image: "/images/posters/burnout.jpg" },
+  { slug: "dahmer1", name: "Jeffrey Dahmer I", image: "/images/posters/dahmer1.jpg" },
+  { slug: "dahmer2", name: "Jeffrey Dahmer II", image: "/images/posters/dahmer2.jpg" },
 ];
 
 export const skills = [

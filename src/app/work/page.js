@@ -1,7 +1,7 @@
-import Link from "next/link";
 import FeatureProject from "@/components/FeatureProject";
 import CardDeck from "@/components/CardDeck";
-import MiniCard from "@/components/MiniCard";
+import FloatingCard from "@/components/FloatingCard";
+import PosterFan from "@/components/PosterFan";
 import Reveal from "@/components/Reveal";
 import NumberedHeading from "@/components/NumberedHeading";
 import { featuredWork, explorations, posterWork } from "@/lib/content";
@@ -27,18 +27,30 @@ export default function WorkPage() {
       {/* AT-A-GLANCE OVERVIEW GRID */}
       <Reveal delay={0.1} className="mt-10">
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-          <Link href="/work/stansv">
-            <MiniCard name="STANSV" tag="Case Study" image={featuredWork[0].image} />
-          </Link>
-          <Link href="/work/alufab">
-            <MiniCard name="Alufab" tag="Case Study" image={featuredWork[1].image} />
-          </Link>
-          <a href="#lavato">
-            <MiniCard name="LAVATO" tag="Exploration" image={explorations[0].cards[0].src} />
-          </a>
-          <a href="#ocean-editorial">
-            <MiniCard name="Ocean Editorial" tag="Exploration" image={explorations[1].cards[0].src} />
-          </a>
+          <FloatingCard
+            href="/work/stansv"
+            name="STANSV"
+            tag="Case Study"
+            image={featuredWork[0].image}
+          />
+          <FloatingCard
+            href="/work/alufab"
+            name="Alufab"
+            tag="Case Study"
+            image={featuredWork[1].image}
+          />
+          <FloatingCard
+            href="#lavato"
+            name="LAVATO"
+            tag="Exploration"
+            image={explorations[0].cards[0].src}
+          />
+          <FloatingCard
+            href="#ocean-editorial"
+            name="Ocean Editorial"
+            tag="Exploration"
+            image={explorations[1].cards[0].src}
+          />
         </div>
       </Reveal>
 
@@ -71,18 +83,11 @@ export default function WorkPage() {
           ))}
         </div>
 
-        <Reveal delay={0.1} className="mt-6">
-          <div className="grid gap-6 sm:grid-cols-3">
-            {posterWork.map((item, i) => (
-              <MiniCard
-                key={item.slug}
-                name={item.name}
-                tag="Poster Design"
-                image={item.image}
-                index={String(i + 1).padStart(2, "0")}
-              />
-            ))}
-          </div>
+        <Reveal delay={0.1} className="mt-16">
+          <p className="mb-6 text-center text-xs uppercase tracking-wide text-muted">
+            Poster Design
+          </p>
+          <PosterFan items={posterWork} />
         </Reveal>
       </div>
     </div>

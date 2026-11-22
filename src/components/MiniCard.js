@@ -19,7 +19,7 @@ export default function MiniCard({ name, tag, description, image, index }) {
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
         {index && (
-          <span className="absolute left-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-brand font-display text-xs font-bold text-brand-ink">
+          <span className="absolute left-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-white font-display text-xs font-bold text-black">
             {index}
           </span>
         )}

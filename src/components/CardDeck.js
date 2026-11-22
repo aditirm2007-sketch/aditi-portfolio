@@ -4,6 +4,34 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Reveal from "./Reveal";
 
+function Tile({ src, label, index, big = false }) {
+  return (
+    <motion.div
+      whileHover={{ y: -8 }}
+      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+      className={`group relative overflow-hidden rounded-xl border border-rule shadow-lg shadow-black/30 ${
+        big ? "aspect-[4/3] md:w-[46%]" : "aspect-square flex-1"
+      }`}
+    >
+      <Image
+        src={src}
+        alt={label}
+        fill
+        sizes={big ? "(min-width: 768px) 40vw, 90vw" : "(min-width: 768px) 15vw, 30vw"}
+        className={`${big ? "object-contain p-4" : "object-cover"} transition-transform duration-500 group-hover:scale-105 bg-surface-2`}
+      />
+      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent px-3 pb-2.5 pt-6">
+        <div className="flex items-center gap-1.5">
+          <span className="font-display text-[11px] font-bold text-white/70">{index}</span>
+          <span className={`text-white ${big ? "text-sm font-semibold" : "text-[11px] truncate"}`}>
+            {label}
+          </span>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 export default function CardDeck({ name, tag, description, cards }) {
   const [cover, ...rest] = cards;
 
@@ -21,52 +49,10 @@ export default function CardDeck({ name, tag, description, cards }) {
         </div>
 
         <div className="mt-6 flex flex-col items-start gap-4 md:flex-row">
-          {/* Featured cover card */}
-          <motion.div
-            whileHover={{ y: -6 }}
-            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="group overflow-hidden rounded-xl border border-rule bg-surface-2 md:w-[46%]"
-          >
-            <div className="relative aspect-[4/3] overflow-hidden bg-surface-2">
-              <Image
-                src={cover.src}
-                alt={cover.label}
-                fill
-                sizes="(min-width: 768px) 40vw, 90vw"
-                className="object-contain p-4 transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
-            <div className="flex items-center gap-2 border-t border-rule px-4 py-3">
-              <span className="font-display text-xs font-bold text-accent2">01</span>
-              <span className="text-xs text-muted">{cover.label}</span>
-            </div>
-          </motion.div>
-
-          {/* Supporting thumbnails */}
-          <div className={`grid flex-1 gap-4 ${rest.length >= 3 ? "grid-cols-3" : "grid-cols-2"}`}>
+          <Tile src={cover.src} label={cover.label} index="01" big />
+          <div className="flex flex-1 gap-4">
             {rest.map((card, i) => (
-              <motion.div
-                key={card.src}
-                whileHover={{ y: -6 }}
-                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="group overflow-hidden rounded-xl border border-rule bg-surface-2"
-              >
-                <div className="relative aspect-square overflow-hidden bg-surface-2">
-                  <Image
-                    src={card.src}
-                    alt={card.label}
-                    fill
-                    sizes="(min-width: 768px) 15vw, 30vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="flex items-center gap-1.5 border-t border-rule px-2.5 py-2">
-                  <span className="font-display text-[11px] font-bold text-accent2">
-                    {String(i + 2).padStart(2, "0")}
-                  </span>
-                  <span className="truncate text-[11px] text-muted">{card.label}</span>
-                </div>
-              </motion.div>
+              <Tile key={card.src} src={card.src} label={card.label} index={String(i + 2).padStart(2, "0")} />
             ))}
           </div>
         </div>
