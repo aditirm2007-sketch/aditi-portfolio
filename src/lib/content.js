@@ -114,6 +114,7 @@ export const explorations = [
       { src: "/images/laundry/cards/02-app.jpg", label: "Native app" },
       { src: "/images/laundry/cards/03-design.jpg", label: "Design system" },
       { src: "/images/laundry/cards/04-hifi.jpg", label: "Hi-fi screens" },
+      { src: "/images/laundry/cards/05-persona.jpg", label: "User persona" },
     ],
   },
   {

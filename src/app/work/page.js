@@ -1,6 +1,6 @@
 import FeatureProject from "@/components/FeatureProject";
 import CardDeck from "@/components/CardDeck";
-import FloatingCard from "@/components/FloatingCard";
+import ProjectStack from "@/components/ProjectStack";
 import PosterFan from "@/components/PosterFan";
 import Reveal from "@/components/Reveal";
 import NumberedHeading from "@/components/NumberedHeading";
@@ -24,34 +24,19 @@ export default function WorkPage() {
         </p>
       </Reveal>
 
-      {/* AT-A-GLANCE OVERVIEW GRID */}
-      <Reveal delay={0.1} className="mt-10">
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-          <FloatingCard
-            href="/work/stansv"
-            name="STANSV"
-            tag="Case Study"
-            image={featuredWork[0].image}
-          />
-          <FloatingCard
-            href="/work/alufab"
-            name="Alufab"
-            tag="Case Study"
-            image={featuredWork[1].image}
-          />
-          <FloatingCard
-            href="#lavato"
-            name="LAVATO"
-            tag="Exploration"
-            image={explorations[0].cards[0].src}
-          />
-          <FloatingCard
-            href="#ocean-editorial"
-            name="Ocean Editorial"
-            tag="Exploration"
-            image={explorations[1].cards[0].src}
-          />
-        </div>
+      {/* AT-A-GLANCE PROJECT STACK */}
+      <Reveal delay={0.1} className="mt-14">
+        <p className="mb-4 text-center text-xs uppercase tracking-wide text-muted">
+          Tap a card to bring it forward
+        </p>
+        <ProjectStack
+          items={[
+            { href: "/work/stansv", name: "STANSV", tag: "Case Study", image: featuredWork[0].image },
+            { href: "/work/alufab", name: "Alufab", tag: "Case Study", image: featuredWork[1].image },
+            { href: "#lavato", name: "LAVATO", tag: "Exploration", image: explorations[0].cards[0].src },
+            { href: "#ocean-editorial", name: "Ocean Editorial", tag: "Exploration", image: explorations[1].cards[0].src },
+          ]}
+        />
       </Reveal>
 
       <div className="mt-20">
