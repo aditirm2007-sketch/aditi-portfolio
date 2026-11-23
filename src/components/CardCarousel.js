@@ -80,7 +80,7 @@ export default function CardCarousel({ name, tag, description, cards }) {
                 whileHover={abs === 0 ? { y: y - 10 } : { y: y - 16, scale: scale * 1.03 }}
                 onClick={() => (abs === 0 ? setLightbox(card) : setActive(i))}
               >
-                <div className="relative aspect-[4/3] w-full bg-[#e9e3d2]">
+                <div className="relative aspect-[16/10] w-full bg-[#e9e3d2]">
                   <Image
                     src={card.src}
                     alt={card.label}
@@ -141,7 +141,7 @@ export default function CardCarousel({ name, tag, description, cards }) {
               className="relative max-h-[85vh] w-full max-w-3xl overflow-hidden rounded-2xl bg-[#f3f1ea]"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="relative aspect-[4/3] w-full">
+              <div className="relative aspect-[16/10] w-full">
                 <Image
                   src={lightbox.src}
                   alt={lightbox.label}
